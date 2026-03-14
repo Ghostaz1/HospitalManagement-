@@ -39,3 +39,10 @@ def patient_delete(request, pk):
         patient.delete()
         return redirect('patient_list')
     return render(request, 'patient/patient_confirm_delete.html', {'patient': patient})
+
+from rest_framework import viewsets
+from .serializers import PatientSerializer
+
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
