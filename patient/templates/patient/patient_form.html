@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Patient Form</title></head>
+<body>
+    <h1>Patient Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Name: <input type="text" name="patient_name" value="{{ patient.patient_name }}"></label><br>
+        <label>Date of Birth: <input type="date" name="dateofbirth" value="{{ patient.dateofbirth }}"></label><br>
+        <label>Age: <input type="number" name="age" value="{{ patient.age }}"></label><br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'patient_list' %}">Back</a>
+</body>
+</html>

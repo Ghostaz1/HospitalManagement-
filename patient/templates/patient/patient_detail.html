@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head><title>Patient Detail</title></head>
+<body>
+    <h1>{{ patient.patient_name }}</h1>
+    <p>Date of Birth: {{ patient.dateofbirth }}</p>
+    <p>Age: {{ patient.age }}</p>
+    <a href="{% url 'patient_list' %}">Back</a>
+</body>
+</html>
